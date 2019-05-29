@@ -329,6 +329,10 @@ public class OperationSetAutoAnswerSipImpl
                     {
                         if(!StringUtils.isNullOrEmpty(headerValue))
                         {
+                            if (headerValue.equals("*")) 
+                            {
+                                return true;
+                            } 
                             String value = callAnswerHeader.getHeaderValue();
 
                             if(value != null && headerValue.equals(value))
